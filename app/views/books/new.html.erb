@@ -1,0 +1,9 @@
+<%= simple_form_for @book do |f|%>
+  <%= f.input :name%>
+  <%= f.association :genre%>
+  <%= f.simple_fields_for :chapters do |ch|%>
+    <%= ch.input :name %>
+    <%= ch.input :content, as: :text %>	
+  <% end %>
+  <%= f.submit %>
+<% end %>
